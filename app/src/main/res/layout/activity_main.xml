@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rlayout_progressbar_hud"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ic_progress_bar_horizontal"
+    android:gravity="center">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+        <Button
+            android:id="@+id/progress_button_left"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/progress_button_right"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <!-- hud progress bar -->
+        <ProgressBar
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:id="@+id/progress_bar"
+            android:progressDrawable="@drawable/progressbar_horizontal_yellow"
+            android:paddingBottom="7dp"
+            android:paddingTop="7dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+
+            />
+
+
+        <TextView
+            android:id="@+id/progress_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hello World!"
+          />
+
+</LinearLayout>
+
+</RelativeLayout>
