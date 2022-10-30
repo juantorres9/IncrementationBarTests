@@ -28,6 +28,9 @@ OnLeftRightSensorListener sensorListener;
         sensorListener=listener;
         
     }
+
+
+
     @Override
     public synchronized int getProgress(){
         //int progress_value=this.getProgress();
@@ -50,8 +53,13 @@ OnLeftRightSensorListener sensorListener;
         return true;
     }
 
+
+    //TRIGGER CALLBACK ACTIONS
     public void launchLeftSensorAction(){
         sensorListener.onLeftSensorDetected();
+    }
+    public void launchRightSensorAction(){
+        sensorListener.onRightSensorDetected();
     }
 
 

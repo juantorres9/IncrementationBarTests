@@ -14,11 +14,12 @@
             android:id="@+id/progress_button_left3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="LEFT_BUTTON "/>
+            android:text="LEFT_BUTTON3"/>
         <Button
             android:id="@+id/progress_button_right3"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:text="RIGHT_BUTTON3"/>
         <!-- hud progress bar -->
         <com.example.myapplication.ProgressCusto
             style="@style/Widget.AppCompat.ProgressBar.Horizontal"

@@ -20,11 +20,10 @@ public class Main3ButtonPressed extends AppCompatActivity {
     ProgressCusto progress_bar3;
 
 
-    Button progres_button_left3;
+    Button progres_button_left3,progress_button_right3;
     public static int MAX_PROGRESS_BAR3=200;
     public static String TAG_MAIN3="MAIN_ACTIVITY3 VJMJCH";
-//    public Handler handler;
- //   boolean semaphore=false;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,37 +32,20 @@ public class Main3ButtonPressed extends AppCompatActivity {
         //PROGRESSBAR CUSTO
         progress_bar3 = findViewById(R.id.progress_bar3);
         progres_button_left3 = findViewById(R.id.progress_button_left3);
+        progress_button_right3=findViewById(R.id.progress_button_right3);
 
         //CUSTO_PROGRESS ATTRIBUTES
         progress_bar3.setMax(MAX_PROGRESS_BAR3);
-        progress_bar3.setProgress(progress_value3);
+        progress_bar3.setProgress(getParentProgress());
         progress_bar3.setBackground(getDrawable(R.drawable.progressbar_horizontal_yellow));
-
-
-        //CALL BACK UI RECEIVER ACTION TO PROCESS
-        progress_bar3.setSensorListener(new OnLeftRightSensorListener() {
-            @Override
-            public void onLeftSensorDetected() {
-                Log.d(TAG_MAIN3," onCreate() Detector of sensor left from callback !!!!!! ");
-                progress_bar3.setProgress(getParentProgress());
-            }
-
-            @Override
-            public void onRightSensorDetected() {
-                Log.d(TAG_MAIN3,"onCreate() Detector of sensor right from callback !!!!!! ");
-                progress_bar3.setProgress(getParentProgress());
-            }
-        });
-
-        //Instantiate handler
-        //handler=new Handler(Looper.getMainLooper());
 
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        //CALL BACK UI RECEIVER ACTION TO PROCESS
+
+        //CALL BACK UI THREAD RECEIVER ACTION TO PROCESS LEFT/RIGHT SENSOR DETECTION
         progress_bar3.setSensorListener(new OnLeftRightSensorListener() {
             @Override
             public void onLeftSensorDetected() {
@@ -73,72 +55,20 @@ public class Main3ButtonPressed extends AppCompatActivity {
 
             @Override
             public void onRightSensorDetected() {
-                Log.d(TAG_MAIN3,"onResume() Detector of sensor right from callback !!!!!! ");
-                progress_bar3.setProgress(getParentProgress());
+                Log.d(TAG_MAIN3,"onResume() Detector of sensor RIGHT from callback !!!!!! ");
+                if(getParentProgress()>1){
+                    Log.d(TAG_MAIN3, "PROGRESS BAR has been detected >1 so we need to RESET IT TO ZERO .");
+                    setParentProgress(0);
+                    progress_bar3.setProgress(getParentProgress());
+                }else{
+                    Log.d(TAG_MAIN3, "PROGRESS BAR has been detected BASICALLY ZERO  so we DO NOTHING.");
+                }
+
             }
         });
 
-        /**
-        progress_bar3.setOnTouchListener(  new View.OnTouchListener(){
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                Log.d(TAG_MAIN3,"ACTION DETECTED IS== "+event.getAction());
-                if(event.getAction()==MotionEvent.ACTION_DOWN){
-                    Log.d(TAG_MAIN3,"pressed left right button");
-                    while(progress_value3<=100){
-                        progress_value3+=5;
-                        try{
-                            Thread.sleep(500);
-                        }catch (Exception e){
 
-                        }
-
-                        Log.d(TAG_MAIN3,"pressed left right button progress value="+progress_value3);
-                        handler.post(new Runnable() {
-                            @Override
-                            public void run() {
-                                progress_bar3.setProgress(progress_value3);
-                            }
-                        });
-                        progress_bar3.setProgress(progress_value3);
-                    }
-                }
-                if(event.getAction()== MotionEvent.ACTION_UP){
-                    Log.d(TAG_MAIN3,"pressed long right button");
-                    if (progress_value3>0 ){
-                        progress_value3=0;
-                        progress_bar3.setProgress(progress_value3);
-                    }
-                    Log.d(TAG_MAIN3,"pressed left right button progress value="+progress_value3);
-                }
-                return true;
-            }
-
-
-        });
-
-        **/
-/**
-
-        while(semaphore){
-            try{
-                Thread.sleep(1000);
-            }catch (Exception e){}
-
-            Log.d(TAG_MAIN3,"SET WITH NEW VALUE  progress value="+progress_value3);
-            progress_bar3.setProgress(progress_value3);
-       //     progress_bar3.setProgress(0);
-            runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-                    progress_bar3.requestLayout();
-                }
-            });
-
-
-
-        }**/
-        //-------------------------------------------------------------------------------------------------button
+        //BUTTON CALLBACK LEFT TRIGGER DELEGATION TO  PROGESS INNER CLASS
         progres_button_left3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -153,10 +83,9 @@ public class Main3ButtonPressed extends AppCompatActivity {
                             }catch (Exception e){}
 
                             int temp_value=incrementParentProgress(5);
-                            Log.d(TAG_MAIN3,"pressed left right button progress value="+temp_value);
+                            Log.d(TAG_MAIN3,"pressed LEFT button progress value="+temp_value);
                             progress_bar3.launchLeftSensorAction();
                         }
-
                         Log.d(TAG_MAIN3,"FINISH THREAD");
                     }
                 }).start();
@@ -164,11 +93,25 @@ public class Main3ButtonPressed extends AppCompatActivity {
 
             }
         });
+        //BUTTON CALLBACK RIGHT TRIGGER DELEGATION TO  PROGESS INNER CLASS
+        progress_button_right3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d(TAG_MAIN3, "pressed RIGHT button Ok execute new thread!");
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        Log.d(TAG_MAIN3, "pressed RIGHT TRIGGERING RIGHT ACTIONS THROUGH INNER PROGRESS CLASS ");
+                        progress_bar3.launchRightSensorAction();
+                    }
+                }).start();
+            }
+        });
 
 
     }
 
-
+//MEMBER SYNCHRONIZED METHODS FOR PROGRESS CLASS VARIABLES
     public synchronized int getParentProgress(){
         return progress_value3;
     }
