@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rlayout_progressbar_hud4"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ic_progress_bar_horizontal"
+    android:gravity="center">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/progress_button_left3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="LEFT_BUTTON "/>
+        <Button
+            android:id="@+id/progress_button_right3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <!-- hud progress bar -->
+        <com.example.myapplication.ProgressCusto
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:id="@+id/progress_bar3"
+            android:paddingBottom="7dp"
+            android:paddingTop="7dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+
+            />
+
+
+
+
+
+    </LinearLayout>
+
+</RelativeLayout>

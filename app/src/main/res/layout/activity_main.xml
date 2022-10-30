@@ -18,6 +18,11 @@
             android:id="@+id/progress_button_right"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/progress_button_go"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="GO_ACTIVITY"/>
         <!-- hud progress bar -->
         <ProgressBar
             style="@style/Widget.AppCompat.ProgressBar.Horizontal"

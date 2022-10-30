@@ -2,6 +2,7 @@ package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -17,19 +18,20 @@ public class MainActivity extends AppCompatActivity {
     TextView progress_tv;
     Button progres_button_right;
     Button progres_button_left;
+    Button button_go;
     public static int MAX_PROGRESS_BAR=200;
     public static String TAG_MAIN="MAIN_ACTIVITY JMJCH";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         progress_bar=findViewById(R.id.progress_bar);
         progress_tv=findViewById(R.id.progress_tv);
         progres_button_left=findViewById(R.id.progress_button_left);
         progres_button_left.setText("BUTTON LEFT");
         progres_button_right=findViewById(R.id.progress_button_right);
         progres_button_right.setText("RIGHT");
+        button_go=findViewById(R.id.progress_button_go);
         progress_bar.setMax(MAX_PROGRESS_BAR);
 
 
@@ -96,6 +98,14 @@ public class MainActivity extends AppCompatActivity {
                 Log.d(TAG_MAIN,"pressed left right button progress value="+progress_value+ "result="+result);
 
                 return result;
+            }
+        });
+
+        button_go.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i =new Intent(getApplicationContext(),Main3ButtonPressed.class);
+                startActivity(i);
             }
         });
 
