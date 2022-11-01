@@ -65,6 +65,11 @@ public class Main3ButtonPressed extends AppCompatActivity {
                 }
 
             }
+
+            @Override
+            public void onNothingDetected(){
+
+            }
         });
 
 
@@ -105,6 +110,17 @@ public class Main3ButtonPressed extends AppCompatActivity {
                         progress_bar3.launchRightSensorAction();
                     }
                 }).start();
+            }
+        });
+
+        //BUTTON LONG EVENT TO REDIRECT TO ACTIVITY 4
+        progress_button_right3.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                Intent i = new Intent(getApplicationContext(),Main4Activity.class);
+                startActivity(i);
+
+                return false;
             }
         });
 

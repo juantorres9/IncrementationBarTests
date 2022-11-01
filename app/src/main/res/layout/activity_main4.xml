@@ -15,6 +15,17 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="ACTIVITY4"/>
+        <com.example.myapplication.ProgressCusto
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:id="@+id/progress_bar4"
+            android:paddingBottom="7dp"
+            android:paddingTop="7dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+
+            />
     </LinearLayout>
 
 </RelativeLayout>

@@ -4,4 +4,5 @@ public interface OnLeftRightSensorListener {
 
     void onLeftSensorDetected();
     void onRightSensorDetected();
+    void onNothingDetected();
 }

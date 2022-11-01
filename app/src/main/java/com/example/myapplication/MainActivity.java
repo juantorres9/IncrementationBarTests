@@ -59,6 +59,8 @@ public class MainActivity extends AppCompatActivity {
                 progress_bar.setProgress(progress_value);
                 progress_bar.invalidate();
             }
+            @Override
+            public void onNothingDetected(){}
         });
 
 
@@ -101,7 +103,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        button_go.setOnClickListener(new View.OnClickListener() {
+        progres_button_right.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i =new Intent(getApplicationContext(),Main3ButtonPressed.class);

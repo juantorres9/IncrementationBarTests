@@ -55,11 +55,15 @@ OnLeftRightSensorListener sensorListener;
 
 
     //TRIGGER CALLBACK ACTIONS
-    public void launchLeftSensorAction(){
+    public void launchLeftSensorAction() {
         sensorListener.onLeftSensorDetected();
     }
-    public void launchRightSensorAction(){
+
+    public void launchRightSensorAction() {
         sensorListener.onRightSensorDetected();
+    }
+    public void launchNothinSensorAction() {
+        sensorListener.onNothingDetected();
     }
 
 
