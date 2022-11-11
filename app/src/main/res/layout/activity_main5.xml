@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/layout_5"
+    tools:context="com.example.myapplication.Main5Activity">
+
+
+    <TextView
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:background="#445577"
+        android:text="TOTOTOTO"
+        android:textColor="#ff4411"/>
+    <RelativeLayout
+        android:layout_width="500px"
+        android:layout_height="120px"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true">
+
+        <include layout="@layout/composed_button0"
+            android:id="@+id/button_waiting_start_right"/>
+    </RelativeLayout>
+
+
+</RelativeLayout>

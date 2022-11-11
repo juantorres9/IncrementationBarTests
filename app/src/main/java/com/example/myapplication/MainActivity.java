@@ -111,5 +111,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        progres_button_left.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i =new Intent(getApplicationContext(),Main5Activity.class);
+                startActivity(i);
+            }
+        });
     }
 }
