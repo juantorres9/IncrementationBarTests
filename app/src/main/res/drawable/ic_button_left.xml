@@ -5,8 +5,8 @@
         android:strokeAlpha="0.5" android:strokeColor="#00000000" android:strokeWidth="0.47074"/>
     <path android:fillColor="#00000000"
         android:pathData="m3.1872,16.8467c-1.5025,0 -2.7319,-1.2293 -2.7319,-2.7319v-10.9276c0,-1.5025 1.2294,-2.7319 2.7319,-2.7319"
-        android:strokeColor="#ffff00" android:strokeWidth="0.910632"/>
+        android:strokeColor="#FFEB3B" android:strokeWidth="0.910632"/>
     <path android:fillColor="#00000000"
         android:pathData="m3.1872,15.2531c-0.6374,0 -1.1383,-0.5009 -1.1383,-1.1383v-10.9276c0,-0.6374 0.5008,-1.1383 1.1383,-1.1383"
-        android:strokeColor="#ffff00" android:strokeLineCap="butt" android:strokeWidth="0.455316"/>
+        android:strokeColor="#FFC107" android:strokeLineCap="butt" android:strokeWidth="0.455316"/>
 </vector>
