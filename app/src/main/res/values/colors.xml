@@ -1,6 +1,25 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <resources>
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+    <color name="pixee_font_gray">#565656</color>
+    <color name="pixee_blue">#34B6B3</color>
+
+    <color name="black">#000</color>
+    <color name="white">#FFF</color>
+    <color name="green">#00a146</color>
+    <color name="red">#ac1d1b</color>
+    <color name="magenta">#D60B52</color>
+    <color name="orange">#ffb400</color>
+    <color name="blue">#009FE3</color>
+    <color name="yellow">#F2F100</color>
+
+    <color name="alpha_yellow">#a0f2f100</color>
+    <color name="alpha_pixee_blue">#a034B6B3</color>
+    <color name="alpha_gray">#a0565656</color>
+
+    <color name="transparent">#00000000</color>
+    <color name="transparent_filter_black">#b4000000</color>
+
 </resources>

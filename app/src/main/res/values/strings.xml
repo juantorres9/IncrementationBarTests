@@ -1,4 +1,15 @@
 <resources>
     <string name="app_name">My Application</string>
     <string name="title_activity_main4">Main4Activity</string>
+
+    <!-- ALERTS -->
+    <string name="alert_hip_center_pos_near_previous">TOO CLOSE TO PREVIOUS POINT</string>
+    <string name="alert_hip_center_not_stable">UNSTABLE HIP CENTER</string>
+    <string name="alert_hip_center_stable">STABLE HIP CENTER</string>
+    <string name="battery_level">BATTERY LEVEL: </string>
+    <string name="no_battery">NO BATTERY</string>
+    <string name="connect_battery">CONNECT EXTERNAL BATTERY</string>
+    <string name="check_battery">VERIFY EXTERNAL BATTERY CONNECTION</string>
+    <string name="no_battery_description">PLEASE CHARGE DEVICE BEFORE STARTING SURGERY</string>
+    <string name="alert_ratio_intensity">PLEASE LIGHT BOTH MARKERS</string>
 </resources>

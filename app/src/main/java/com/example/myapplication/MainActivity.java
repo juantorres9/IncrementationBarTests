@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     Button progres_button_right;
     Button progres_button_left;
     Button button_go;
+    Button button_go_dialog;
     public static int MAX_PROGRESS_BAR=200;
     public static String TAG_MAIN="MAIN_ACTIVITY JMJCH";
     @Override
@@ -33,6 +34,8 @@ public class MainActivity extends AppCompatActivity {
         progres_button_right.setText("RIGHT");
         button_go=findViewById(R.id.progress_button_go);
         progress_bar.setMax(MAX_PROGRESS_BAR);
+
+        button_go_dialog=findViewById(R.id.progress_button_go_dialog);
 
 
 
@@ -118,5 +121,15 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
+
+        button_go_dialog.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                Intent i =new Intent(getApplicationContext(),MainActivity6.class);
+                startActivity(i);
+                return true;
+            }
+        });
+
     }
 }
