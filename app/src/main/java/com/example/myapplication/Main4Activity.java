@@ -2,20 +2,30 @@ package com.example.myapplication;
 
 
 
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
 
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class Main4Activity extends AppCompatActivity {
 
-    public static String TAG_4="MainActivity4 hi";
+    public static String TAG_4="MainActivity4_hi";
     ProgressCusto progressBarLeft;
     public static int MAX_PROGRESS_BAR4=200;
     public int progress_value4=0;
+    Button buttonDialog;
+    AlertDialog alert;
+    Activity currentAct;
 
 
 
@@ -25,7 +35,9 @@ public class Main4Activity extends AppCompatActivity {
         setContentView(R.layout.activity_main4);
 
         progressBarLeft=findViewById(R.id.progress_bar4);
+        buttonDialog=findViewById(R.id.button_left4);
         progressBarLeft.setMax(MAX_PROGRESS_BAR4);
+        currentAct=this;
 
 
 
@@ -55,7 +67,18 @@ public class Main4Activity extends AppCompatActivity {
             }
         });
 
+    /**
+    * Implementation button4 user action ,it shows the dialog
+    **/
+        final Activity act=currentAct;
+        buttonDialog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d(TAG_4,"SHOW DIALOG now");
+                showCustoAlert(currentAct);
 
+            }
+        });
         //IMPLEMENTATION NATIVE DU LISTENER ONTOUCH
         progressBarLeft.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -91,5 +114,32 @@ public class Main4Activity extends AppCompatActivity {
 
             });
     }
+
+
+    public  void showCustoAlert(final Activity act){
+
+        AlertDialog.Builder result= new AlertDialog.Builder(act);
+        result.setTitle("This is the title of the dialog ");
+        result.setIcon(R.drawable.ic_danger);
+        result.setPositiveButton("Posit+", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Toast.makeText(act.getApplicationContext(),"YOU CHOOSE POSITIVE",Toast.LENGTH_LONG).show();
+            }
+        });
+        result.setNegativeButton("Negative", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Toast.makeText(act.getApplicationContext(),"YOU CHOOSE NEGATIVE",Toast.LENGTH_LONG).show();
+               // dialog.cancel();
+            }
+        });
+        alert=result.create();
+        alert.show();
+
+
+
+    }
+
 
 }

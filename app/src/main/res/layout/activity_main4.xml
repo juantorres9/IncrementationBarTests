@@ -11,7 +11,7 @@
         android:orientation="vertical">
 
         <Button
-            android:id="@+id/progress_button_left4"
+            android:id="@+id/button_left4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="ACTIVITY4"/>
