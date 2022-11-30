@@ -6,9 +6,40 @@
     tools:context="com.example.myapplication.MainActivity6">
 
     <TextView
+        android:id="@+id/tv_example1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="#FF004411"
         android:text="ACTIVITY6"/>
+
+    <TextView
+        android:id="@+id/tv_example2"
+        android:layout_below="@id/tv_example1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#2196F3"
+        android:text="ACTIVITY6- text view2"/>
+
+    <ImageView
+        android:id="@+id/image_example1"
+        android:layout_below="@id/tv_example2"
+        android:background="@drawable/ic_button_center"
+        android:layout_width="70dp"
+        android:layout_height="200dp" />
+    <TextView
+        android:id="@+id/tv_example3"
+        android:layout_below="@id/image_example1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#FF5722"
+        android:text="ACTIVITY6- text view2"/>
+
+    <ImageView
+        android:id="@+id/image_view_waitting_start_anim"
+        android:layout_below="@id/image_example1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_head_tilt_anim_2"/>
     <!-- alert -->
     <com.example.myapplication.alerts_classes.CustomAlerts
         android:id="@+id/llayout_alert"
@@ -19,4 +50,5 @@
         android:gravity="center"
         android:visibility="gone"
         android:orientation="vertical"/>
+
 </RelativeLayout>

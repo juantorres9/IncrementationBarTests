@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:id="@+id/image_alert_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_warning"/>
+
+    <com.example.myapplication.alerts_classes.CustomTextView
+        android:id="@+id/text_alert"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:gravity="center"
+        android:paddingTop="@dimen/padding_text_small"
+        android:paddingBottom="@dimen/padding_text_small"
+        android:paddingStart="@dimen/padding_text"
+        android:paddingEnd="@dimen/padding_text"
+        android:background="@drawable/alerts_background_warning"
+        android:textSize="@dimen/font_size_normal" />
+
+</LinearLayout>
