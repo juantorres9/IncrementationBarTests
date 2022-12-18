@@ -24,10 +24,15 @@
             android:layout_height="wrap_content"
             android:text="GO_ACTIVITY"/>
         <Button
-            android:id="@+id/progress_button_go_dialog"
+            android:id="@+id/button_go_dialog"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="GO_DIALOG"/>
+        <Button
+            android:id="@+id/button_permission1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="USE_FEATURE_WITH_PERMISSION"/>
         <!-- hud progress bar -->
         <ProgressBar
             style="@style/Widget.AppCompat.ProgressBar.Horizontal"
